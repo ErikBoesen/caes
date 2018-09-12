@@ -11,6 +11,7 @@ char *read(char* path) {
     rewind(f);
     str = malloc(fsize * (sizeof(char)));
     fread(str, sizeof(char), fsize, f);
+    str[fsize * (sizeof(char))] = '\0';
     fclose(f);
     return str;
 }
